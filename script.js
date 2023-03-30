@@ -11,7 +11,7 @@ for (let key of keys) {
 		if (value == "clear") {
 			input = "";
 			display_input.innerHTML = ""; //if display nothing
-			display_output.innerHTML = "";
+			display_output.innerHTML = "0";
 		} else if (value == "backspace") {
 			input = input.slice(0, -1); //remnove yung last element
 			display_input.innerHTML = CleanInput(input);
