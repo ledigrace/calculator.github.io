@@ -89,7 +89,8 @@ body{
     
 }
 .keys .key:hover{
-    box-shadow: inset 0px 0px 8px rgba(0, 0, 0, 0.2);
+    /* box-shadow: inset 0px 0px 8px rgba(0, 0, 0, 0.2); */
+    box-shadow: inset 0px 0px 8px rgba(255, 136, 136, 0.89);
 }
 .keys .key.operator span{
     color: #eb6666;
