@@ -2,32 +2,32 @@ const keys = document.querySelectorAll('.key');
 const display_input = document.querySelector('.display .input');
 const display_output = document.querySelector('.display .output');
 
-let input = "";
+let input = ""; //number that input in calculations
 
 for (let key of keys) {
-	const value = key.dataset.key; //numbers sa calcu yarn
+	const value = key.dataset.key; //numbers sa calcu
 
 	key.addEventListener('click', () => {
-		if (value == "clear") {
-			input = "";
+		if (value == "clear") { //when you click AC button
+			input = ""; //button AC and output to nothing
 			display_input.innerHTML = ""; //if display nothing
 			display_output.innerHTML = "0";
 		} else if (value == "backspace") {
-			input = input.slice(0, -1); //remnove yung last element
+			input = input.slice(0, -1); //remnove yung last element/number
 			display_input.innerHTML = CleanInput(input);
 		} else if (value == "=") {
 			let result = eval(PerpareInput(input));//evaluates and executes
 
 			display_output.innerHTML = CleanOutput(result); 
-		} else if (value == "brackets") {
-			if (
-				input.indexOf("(") == -1 || 
+		} else if (value == "brackets") { //open and close brackets
+			if ( //this conditon below is if no brackets will add the starting ( brackets or || if the last bracket are close it adds new starting brackets 
+				input.indexOf("(") == -1 ||
 				input.indexOf("(") != -1 && 
 				input.indexOf(")") != -1 && 
 				input.lastIndexOf("(") < input.lastIndexOf(")")
 			) {
-				input += "(";
-			} else if (
+				input += "("; 
+			} else if ( //this conditon below is if it  closing brackets not equal to minus means it does exist
 				input.indexOf("(") != -1 && 
 				input.indexOf(")") == -1 || 
 				input.indexOf("(") != -1 &&
