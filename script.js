@@ -5,7 +5,7 @@
     }
 
     function clearInput() {
-    input.value = '0';
+    input.value = '';
     }
 
     function backspace() {
